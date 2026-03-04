@@ -1,0 +1,9 @@
+=== ARCHIVO DE CONFLICTO ===
+Este archivo causará conflicto entre main y devDayana
+
+--- CAMBIOS EN MAIN ---
+Línea 1: Configuración principal desde MAIN
+Línea 2: Puerto=8080 (desde MAIN)
+Línea 3: Base de datos=localhost/main_db (desde MAIN)
+Línea 4: Usuario=admin_main (desde MAIN)
+Línea 5: Fecha=Wed Mar  4 17:50:00     2026 (desde MAIN)
