@@ -13,6 +13,7 @@ import {
   FaLeaf,
   FaPrescriptionBottle,
   FaHeart,
+<<<<<<< Updated upstream
   FaSearch,
   FaFilter,
   FaStar,
@@ -23,11 +24,18 @@ import {
   FaInfoCircle,
   FaMinus,
   FaPlus
+=======
+  FaStar,
+  FaTruck,
+  FaShieldAlt,
+  FaClock
+>>>>>>> Stashed changes
 } from 'react-icons/fa';
 
 const Productos = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+<<<<<<< Updated upstream
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [quantities, setQuantities] = useState({});
@@ -40,6 +48,9 @@ const Productos = () => {
     { id: 'jarabes', nombre: 'Jarabes', icono: <FaFlask /> },
     { id: 'cuidado', nombre: 'Cuidado Personal', icono: <FaHeart /> }
   ];
+=======
+  const [activeCategory, setActiveCategory] = useState('todos');
+>>>>>>> Stashed changes
 
   const productos = [
     { 
@@ -53,10 +64,16 @@ const Productos = () => {
       imagen: '/images/MEDI1.webp',
       descripcion: 'Alivio rápido del dolor y fiebre',
       icono: <FaPills />,
+<<<<<<< Updated upstream
       beneficios: ['Alivia el dolor', 'Reduce la fiebre', 'Acción rápida'],
       envio: '24h',
       vendidos: 1500,
       rating: 4.5
+=======
+      categoria: 'analgesicos',
+      stock: 15,
+      oferta: true
+>>>>>>> Stashed changes
     },
     { 
       id: 2, 
@@ -69,10 +86,16 @@ const Productos = () => {
       imagen: '/images/MEDI2.jpg',
       descripcion: 'Antiinflamatorio y analgésico',
       icono: <FaCapsules />,
+<<<<<<< Updated upstream
       beneficios: ['Antiinflamatorio', 'Alivia el dolor', 'Reduce hinchazón'],
       envio: '24h',
       vendidos: 1200,
       rating: 4.3
+=======
+      categoria: 'antiinflamatorios',
+      stock: 8,
+      oferta: false
+>>>>>>> Stashed changes
     },
     { 
       id: 3, 
@@ -85,11 +108,17 @@ const Productos = () => {
       imagen: '/images/MEDI3.png',
       descripcion: 'Antibiótico de amplio espectro',
       icono: <FaPrescriptionBottle />,
+<<<<<<< Updated upstream
       beneficios: ['Trata infecciones', 'Antibiótico efectivo', 'Uso con receta'],
       envio: '48h',
       vendidos: 800,
       rating: 4.7,
       requiereReceta: true
+=======
+      categoria: 'antibioticos',
+      stock: 12,
+      oferta: true
+>>>>>>> Stashed changes
     },
     { 
       id: 4, 
@@ -102,10 +131,16 @@ const Productos = () => {
       imagen: '/images/MEDI4.png',
       descripcion: 'Fortalece el sistema inmunológico',
       icono: <FaLeaf />,
+<<<<<<< Updated upstream
       beneficios: ['Fortalece defensas', 'Antioxidante', 'Energía natural'],
       envio: '24h',
       vendidos: 2000,
       rating: 4.8
+=======
+      categoria: 'vitaminas',
+      stock: 20,
+      oferta: false
+>>>>>>> Stashed changes
     },
     { 
       id: 5, 
@@ -118,10 +153,16 @@ const Productos = () => {
       imagen: '/images/MEDI5.jpg',
       descripcion: 'Alivio de la tos seca y productiva',
       icono: <FaFlask />,
+<<<<<<< Updated upstream
       beneficios: ['Calma la tos', 'Alivia la garganta', 'Sabor agradable'],
       envio: '24h',
       vendidos: 950,
       rating: 4.4
+=======
+      categoria: 'jarabes',
+      stock: 6,
+      oferta: true
+>>>>>>> Stashed changes
     },
     { 
       id: 6, 
@@ -134,6 +175,7 @@ const Productos = () => {
       imagen: '/images/MEDI6.jpg',
       descripcion: 'Desinfección de manos 70%',
       icono: <FaHeart />,
+<<<<<<< Updated upstream
       beneficios: ['Elimina gérmenes', 'Hidrata', 'Fácil de usar'],
       envio: '24h',
       vendidos: 3000,
@@ -186,6 +228,27 @@ const Productos = () => {
       [productId]: Math.max(1, (prev[productId] || 1) + change)
     }));
   };
+=======
+      categoria: 'higiene',
+      stock: 25,
+      oferta: false
+    }
+  ];
+
+  const categorias = [
+    { id: 'todos', nombre: 'Todos los productos' },
+    { id: 'analgesicos', nombre: 'Analgésicos' },
+    { id: 'antiinflamatorios', nombre: 'Antiinflamatorios' },
+    { id: 'antibioticos', nombre: 'Antibióticos' },
+    { id: 'vitaminas', nombre: 'Vitaminas' },
+    { id: 'jarabes', nombre: 'Jarabes' },
+    { id: 'higiene', nombre: 'Higiene' }
+  ];
+
+  const productosFiltrados = activeCategory === 'todos' 
+    ? productos 
+    : productos.filter(p => p.categoria === activeCategory);
+>>>>>>> Stashed changes
 
   const handleComprar = (producto) => {
     const cantidad = quantities[producto.id] || 1;
@@ -209,7 +272,11 @@ const Productos = () => {
       {modalOpen && selectedProduct && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+<<<<<<< Updated upstream
             <div className="modal-icon-wrapper">
+=======
+            <div className="modal-success-animation">
+>>>>>>> Stashed changes
               <FaCheckCircle className="modal-icon" />
             </div>
             <h3>¡Compra Exitosa!</h3>
@@ -217,6 +284,7 @@ const Productos = () => {
             <div className="modal-details">
               <div className="modal-detail-item">
                 <FaBox className="modal-detail-icon" />
+<<<<<<< Updated upstream
                 <span>Cantidad: {selectedProduct.cantidadCompra}</span>
               </div>
               <div className="modal-detail-item">
@@ -228,6 +296,16 @@ const Productos = () => {
               <FaTruck className="modal-truck-icon" />
               <span>¡Llegará en {selectedProduct.envio}!</span>
             </div>
+=======
+                <span>Cantidad: {selectedProduct.cantidad}</span>
+              </div>
+              <div className="modal-detail-item">
+                <FaTag className="modal-detail-icon" />
+                <span>Precio: {selectedProduct.precio}</span>
+              </div>
+            </div>
+            <p className="modal-thanks">¡Gracias por tu compra!</p>
+>>>>>>> Stashed changes
             <button className="modal-button" onClick={closeModal}>
               Seguir Comprando
             </button>
@@ -235,6 +313,7 @@ const Productos = () => {
         </div>
       )}
 
+<<<<<<< Updated upstream
       {/* Hero Section */}
       <div className="productos-hero">
         <div className="hero-content">
@@ -322,6 +401,72 @@ const Productos = () => {
               <div className="producto-descuento">
                 -{Math.round(((producto.precioOriginal - producto.precio) / producto.precioOriginal) * 100)}%
               </div>
+=======
+      <div className="productos-header">
+        <Link to="/" className="back-button">
+          <FaArrowLeft /> Volver al Inicio
+        </Link>
+        <div className="header-content">
+          <h1 className="productos-title">
+            <span className="title-gradient">Nuestros Productos</span>
+          </h1>
+          <p className="productos-subtitle">
+            Descubre nuestra amplia gama de medicamentos y productos para tu bienestar
+          </p>
+        </div>
+      </div>
+
+      {/* Barra de categorías */}
+      <div className="categorias-bar">
+        <div className="categorias-container">
+          {categorias.map(cat => (
+            <button
+              key={cat.id}
+              className={`categoria-btn ${activeCategory === cat.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              {cat.nombre}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Banner de beneficios */}
+      <div className="beneficios-banner">
+        <div className="beneficio-item">
+          <FaTruck className="beneficio-icon" />
+          <div className="beneficio-texto">
+            <h4>Envío Gratis</h4>
+            <p>En compras mayores a 100bs</p>
+          </div>
+        </div>
+        <div className="beneficio-item">
+          <FaShieldAlt className="beneficio-icon" />
+          <div className="beneficio-texto">
+            <h4>100% Original</h4>
+            <p>Productos certificados</p>
+          </div>
+        </div>
+        <div className="beneficio-item">
+          <FaClock className="beneficio-icon" />
+          <div className="beneficio-texto">
+            <h4>Entrega Rápida</h4>
+            <p>24/48 horas hábiles</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Contador de productos */}
+      <div className="productos-stats">
+        <p>Mostrando <span>{productosFiltrados.length}</span> productos</p>
+      </div>
+      
+      <div className="productos-grid">
+        {productosFiltrados.map(producto => (
+          <div key={producto.id} className="producto-card">
+            {producto.oferta && (
+              <div className="producto-badge">Oferta</div>
+>>>>>>> Stashed changes
             )}
             
             {/* Imagen del producto */}
@@ -334,6 +479,7 @@ const Productos = () => {
                   e.target.src = 'https://via.placeholder.com/200x200?text=FARMATODO';
                 }}
               />
+<<<<<<< Updated upstream
               {producto.requiereReceta && (
                 <div className="producto-receta-badge">
                   <FaInfoCircle /> Requiere receta
@@ -415,11 +561,71 @@ const Productos = () => {
                 <FaTruck className="envio-icon" />
                 <span>Envío en {producto.envio}</span>
               </div>
+=======
+              <div className="producto-icono-flotante">
+                {producto.icono}
+              </div>
+            </div>
+            
+            <div className="producto-info">
+              <div className="producto-header">
+                <h3 className="producto-nombre">{producto.nombre}</h3>
+                <div className="producto-rating">
+                  <FaStar className="star-filled" />
+                  <FaStar className="star-filled" />
+                  <FaStar className="star-filled" />
+                  <FaStar className="star-filled" />
+                  <FaStar className="star-half" />
+                  <span className="rating-number">(4.5)</span>
+                </div>
+              </div>
+              
+              <p className="producto-descripcion">{producto.descripcion}</p>
+              
+              <div className="producto-detalles">
+                <div className="producto-cantidad">
+                  <FaBox className="detalle-icon" />
+                  <div className="detalle-texto">
+                    <span className="detalle-label">Presentación</span>
+                    <span className="detalle-valor">{producto.cantidad} unidades</span>
+                  </div>
+                </div>
+                
+                <div className="producto-precio">
+                  <FaTag className="detalle-icon" />
+                  <div className="detalle-texto">
+                    <span className="detalle-label">Precio</span>
+                    <span className="detalle-valor precio">{producto.precio}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="producto-stock">
+                <div className="stock-bar">
+                  <div 
+                    className="stock-fill" 
+                    style={{ width: `${(producto.stock / 30) * 100}%` }}
+                  ></div>
+                </div>
+                <span className={`stock-text ${producto.stock < 10 ? 'stock-bajo' : ''}`}>
+                  {producto.stock < 10 ? '¡Últimas unidades!' : `${producto.stock} disponibles`}
+                </span>
+              </div>
+              
+              <button 
+                className="producto-comprar-btn"
+                onClick={() => handleComprar(producto)}
+              >
+                <FaShoppingCart className="btn-icon" />
+                Agregar al Carrito
+              </button>
+>>>>>>> Stashed changes
             </div>
           </div>
         ))}
       </div>
 
+<<<<<<< Updated upstream
       {/* Banner de WhatsApp */}
       <div className="whatsapp-banner">
         <div className="whatsapp-content">
@@ -437,6 +643,11 @@ const Productos = () => {
             Consultar ahora
           </a>
         </div>
+=======
+      {/* Footer simple */}
+      <div className="productos-footer">
+        <p>© 2024 Farmacia FARMATODO - Tu salud es nuestra prioridad</p>
+>>>>>>> Stashed changes
       </div>
     </div>
   );
