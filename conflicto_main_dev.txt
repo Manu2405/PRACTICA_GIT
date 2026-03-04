@@ -1,0 +1,7 @@
+=== ARCHIVO DE CONFLICTO (VERSIÓN DEV) ===
+MODIFICADO EN RAMA DEVDAYANA
+
+--- CAMBIOS EN DEVDAYANA ---
+Línea 1: Configuración de desarrollo desde DEVDAYANA
+Línea 2: Puerto=3000 (desde DEVDAYANA - cambio)
+Línea 3: Base de datos=localhost/dev_db (desde DEVDAYANA)
